@@ -1,5 +1,6 @@
 mod traits {
     use crate::path_to_enlightenment::visibility::ticket::Status;
+    use std::sync::TryLockError;
 
     /// You might have noticed that in the test for the previous koan we haven't checked if
     /// the status returned by `.status()` matched the status we passed to `create_ticket`.
@@ -57,7 +58,11 @@ mod traits {
             // If you need to refresh the `match` syntax, checkout
             // https://doc.rust-lang.org/book/ch06-02-match.html
             match (self, other) {
-                __
+                (Status::Blocked, Status::Blocked) => true,
+                (Status::Done, Status::Done) => true,
+                (Status::InProgress, Status::InProgress) => true,
+                (Status::ToDo, Status::ToDo) => true,
+                _ => false
             }
         }
     }
