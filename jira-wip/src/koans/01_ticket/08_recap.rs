@@ -5,7 +5,7 @@ mod recap {
     ///
     /// Then get ready to dive in the next section!
 
-    #[derive(PartialEq, Debug)]
+    #[derive(Clone, Debug, PartialEq)]
     pub enum Status {
         ToDo,
         InProgress,
@@ -13,6 +13,7 @@ mod recap {
         Done,
     }
 
+    #[derive(Clone, Debug, PartialEq)]
     pub struct Ticket {
         title: String,
         description: String,
