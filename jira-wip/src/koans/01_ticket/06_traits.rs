@@ -1,6 +1,5 @@
 mod traits {
     use crate::path_to_enlightenment::visibility::ticket::Status;
-    use std::sync::TryLockError;
 
     /// You might have noticed that in the test for the previous koan we haven't checked if
     /// the status returned by `.status()` matched the status we passed to `create_ticket`.
