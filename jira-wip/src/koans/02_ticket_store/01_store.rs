@@ -41,11 +41,12 @@ mod store {
         /// We take `&mut self` because we will have to mutate our HashMap to insert a new
         /// key-value pair.
         pub fn save(&mut self, ticket: Ticket, id: u32) {
-            todo!()
+            self.data.insert(id, ticket);
+            return
         }
 
         pub fn get(&self, id: &u32) -> &Ticket {
-            todo!()
+            self.data.get(id).expect("No ticket found")
         }
     }
 

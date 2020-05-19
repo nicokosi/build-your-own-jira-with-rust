@@ -44,7 +44,11 @@ mod vec {
         /// The Rust documentation for `HashMap` will also be handy:
         /// https://doc.rust-lang.org/std/collections/struct.HashMap.html
         pub fn list(&self) -> Vec<&Ticket> {
-           todo!()
+            let mut tickets: Vec<&Ticket> = Vec::new();
+            for ticket in self.data.values() {
+                tickets.push(ticket);
+            }
+            return tickets;
         }
 
         fn generate_id(&mut self) -> TicketId {
